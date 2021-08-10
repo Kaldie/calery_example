@@ -6,4 +6,4 @@ COPY . /app
 
 WORKDIR /app
 
-CMD celery -A worker worker --loglevel=INFO
+CMD celery -A project.worker worker --loglevel=INFO

@@ -6,4 +6,4 @@ COPY . /app
 
 WORKDIR /app
 ENV PYTHONPATH=/app
-CMD python worker/main.py
+CMD python project/main.py

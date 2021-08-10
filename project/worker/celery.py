@@ -1,8 +1,8 @@
 from celery import Celery
 
-app = Celery('worker',
+app = Celery('project',
              broker='pyamqp://rabbitmq//',
-             include=['worker.tasks'])
+             include=['project.worker.tasks'])
 
 # Optional configuration, see the application user guide.
 app.conf.update(
