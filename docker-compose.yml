@@ -1,0 +1,21 @@
+version: "3.3"
+
+services:
+  master:
+    build: 
+        dockerfile: Dockerfile.master
+        context: .
+    links:
+      - rabbitmq
+    depends_on: 
+      - rabbitmq
+  worker:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    depends_on: 
+      - rabbitmq
+    links:
+      - rabbitmq
+  rabbitmq:
+    image: rabbitmq:3
